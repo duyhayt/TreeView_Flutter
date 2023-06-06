@@ -22,11 +22,21 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text('FileSystemTree Demo'),
-          ),
-          body: FileSystemTree(),
-      ));
+      home: const MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends GetView {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('FileSystemTree Demo'),
+      ),
+      body: FileSystemTree(),
+    );
   }
 }

@@ -9,11 +9,6 @@ class FileSystemTree extends StatelessWidget {
 
   FileSystemTree({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return _buildNodeItems();
-  }
-
   Widget _buildNodeItems() {
     return ListView.builder(
       shrinkWrap: true,
@@ -36,33 +31,9 @@ class FileSystemTree extends StatelessWidget {
       title: Text(item.folderName.toString()),
     );
   }
+  @override
+  Widget build(BuildContext context) {
+    return _buildNodeItems();
+  }
 }
 
-// class FileSystemTree extends StatelessWidget {
-//   final List<TreeNode> data;
-//
-//   const FileSystemTree(this.data, {super.key});
-//
-//   Widget _buildTree(List<TreeNode> items) {
-//     return ListView.builder(
-//       itemCount: items.length,
-//       itemBuilder: (context, index) {
-//         final item = items[index];
-//
-//         return item.childFolders!.isNotEmpty
-//             ? ListTile(
-//                 title: Text(item.folderName.toString()),
-//                 subtitle: _buildTree(item.childFolders!.toList()),
-//               )
-//             : ListTile(
-//                 title: Text(item.folderName.toString()),
-//               );
-//       },
-//     );
-//   }
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return _buildTree(data);
-//   }
-// }
